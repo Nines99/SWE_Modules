@@ -1,0 +1,38 @@
+.box {
+    border: 1px solid #ccc;
+    padding: 1em;
+    text-align: center;
+    width: 300px;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.box label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.box input,
+.box button {
+    margin-bottom: 10px;
+}
+
+.box p.result {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.box button {
+    background-color: #ee3fdf;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 3px;
+}

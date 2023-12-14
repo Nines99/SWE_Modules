@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Animation</title>
+    <style>
+        p {
+            animation-name: slidein;
+            animation-duration: 3s;
+        }
+
+        @keyframes slidein {
+            from {
+                margin-left: 100%;
+            }
+
+            to {
+                margin-left: 0;
+            }
+        }
+
+        .square {
+            width: 100px;
+            height: 100px;
+            background-color: grey;
+            animation-name: squareAni;
+            animation-duration: 3s;
+            position: absolute;
+        }
+
+        @keyframes squareAni {
+            from {
+                right: 100%;
+            }
+
+            to {
+                background-color: green;
+                right: 0%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <p>Hello World!</p>
+
+    <div class = "square"></div>
+</body>
+
+</html>

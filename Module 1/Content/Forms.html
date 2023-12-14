@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <h2>HTML Forms</h2>
+
+  <!-- If you click the "Submit" button, the form
+        -data will be sent to a page called "/action_page". -->
+
+  <form action="/action_page">
+    <fieldset>
+      <legend>Insert Details Below</legend>
+        <label for="firstName">First name:</label>
+      <br />
+        <input type="text" id="firstName" name="firstName" value="Joel" />
+      <br />
+        <label for="lastName">Last name:</label>
+      <br />
+        <input type="text" id="lastName" name="lastName" value="Doe" />
+      <br />
+        <label for="password">Password: </label>
+      <br />
+      <input type="password" id="password" name="password" value="JDoel">
+      <br />
+      <br />
+        <label>Language: </label>
+          <select name="language">
+            <option>English</option>
+            <option>Te Reo Māori</option>
+            <option>Chinese</option>
+            <option>Japanese</option>
+          </select>
+      <br />
+      <br />
+          <label>Choose one of the following:</label>
+          <label><input type= "radio" name= "contact" value= "phone"> Phone </label>
+          <label><input type= "radio" name= "contact" value= "email"> Email </label>
+      <br />
+      <br />
+          <label>Choose one of the following:</label>
+
+
+      <br />
+      <br />
+        <input type="submit" value="Submit" />
+    </fieldset>
+  </form>
+</body>

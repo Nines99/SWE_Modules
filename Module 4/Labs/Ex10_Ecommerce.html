@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <template id="car-template">
+        <div class="card col-8" style="width: 18rem; margin:10px">
+            <div class="card-body">
+                <h5 class="card-title">Car title</h5>
+                <p class="card-text">Car text.</p>
+                <img class="card-image">
+                <p class="card-description">Car Description</p>
+            </div>
+        </div>
+    </template>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <title>ECommerce</title>
+
+        <style>
+        .card-image {
+            max-width: 100%; /* Set the maximum width of the image to 100% of its container */
+            height: auto; /* Maintain the aspect ratio of the image */
+        }   
+        </style>
+    </head>
+
+<body>
+    <h1>Welcome to Shop</h1>
+    <label for="Categories">Categories</label> 
+    <select name="Categories" id="Categories" onchange="filterCategories()"> 
+        <option value="men's clothing">men's clothing</option> 
+        <option value="electronics">electronics</option> 
+        <option value="jewelery">jewelery</option> 
+        <option value="women's clothing">women's clothing</option> 
+    </select>
+  
+
+    <div id = "car-list" class = 'row'></div>
+</body>
+<script>   
+
+    let fakeArray; 
+
+    fetch('https://fakestoreapi.com/products')
+        .then((response) => response.json())
+        .then((json) => {getCars(json).then((cars) => cars.forEach(car => addCard(car)));
+            console.log(json);fakeArray = json});
+            
+            function filterCategories() {
+        const selectedCategory = document.getElementById("Categories").value
+        console.log(selectedCategory)
+        
+        const filterArray = fakeArray.filter(product => product.category === selectedCategory)
+        getCars(filterArray).then((cars) => cars.forEach(car => addCard(car)))
+    }
+
+        function getCars(json) {
+            document.querySelector('#car-list').innerText = " ";
+            return new Promise(resolve => {
+                setTimeout(function () {
+                    // resolve the promise with the car data after 1s
+                    resolve(json)
+                }, 1000)
+            })
+        }
+        // get data asynchronously, then console.log for testing
+        getCars().then((cars) => console.log(cars))
+
+        // use carData and getCars function from previous slide
+        // clone, then populate, then append a new template
+        function addCard(car) {
+            const template =
+                document.getElementById("car-template").content.cloneNode(true);
+            template.querySelector('.card-title').innerText = car.title;
+            template.querySelector('.card-text').innerText = "$" + car.price;
+            template.querySelector('.card-image').src = car.image;
+            template.querySelector('.card-description').innerText = car.description;
+            document.querySelector('#car-list').appendChild(template);
+
+        }
+
+        
+</script>
+
+</html>
+
+</html>

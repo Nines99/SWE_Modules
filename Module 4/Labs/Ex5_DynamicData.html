@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<template id="car-template">
+    <div class="card col-8" style="width: 18rem; margin:10px">
+        <div class="card-body">
+            <h5 class="card-title">Car title</h5>
+            <p class="card-text">Car text.</p>
+        </div>
+    </div>
+</template>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootst
+rap.min.css" rel="stylesheet">
+    <title>Latest News</title>
+</head>
+
+<body>
+    
+    <div id="car-list" class="col-lg-3 col-md-6 col-sm-12"></div>
+    
+    <label>Title</label><input id = "title">
+    <label>Content</label><input id = "content">
+    <button onclick = addStory()>Add Story</button>
+
+    <script>
+
+        let news = [
+            {
+                id: 1, title: 'Election Results',
+                content: "Newly elected minister..."
+            },
+            {
+                id: 2, title: 'Sporting Success',
+                content: "World Cup winners..."
+            },
+            {
+                id: 3, title: 'Tornado Warning',
+                content: "Residents should prepare..."
+            }
+        ];
+
+        function addStory() {
+            const title = document.getElementById("title").value
+            const content = document.getElementById("content").value
+
+            news.push({id:news.length + 1, title:title, content:content})
+            getCars().then((cars) => cars.forEach(car => addCard(car)))
+        }
+
+        function getCars() {
+            document.querySelector('#car-list').innerText = " ";
+            return new Promise(resolve => {
+                setTimeout(function () {
+                    // resolve the promise with the car data after 1s
+                    resolve(news)
+                }, 1000)
+            })
+        }
+        // get data asynchronously, then console.log for testing
+        getCars().then((cars) => console.log(cars))
+
+        // use carData and getCars function from previous slide
+        // clone, then populate, then append a new template
+        function addCard(car) {
+            const template =
+                document.getElementById("car-template").content.cloneNode(true);
+            template.querySelector('.card-title').innerText = car.title;
+            template.querySelector('.card-text').innerText = car.content;
+            document.querySelector('#car-list').appendChild(template);
+        }
+
+        function reloading() {
+            getCars().then((cars) => cars.forEach(car => addCard(car)))
+        }
+
+        // get data asynchronously, then use it to populate a template
+        setInterval(reloading(), 5000)
+
+    </script>
+
+
+</body>
+
+</html>

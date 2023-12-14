@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style_forms.css">
+</head>
+<body>
+
+<h1>This is Forms Examples</h1>
+
+<form action="" method="get" class="form-example">
+    <fieldset>
+    <div class="form-example">
+      <label for="name">Enter your name: </label>
+      <input type="text" name="name" id="name" required />
+    </div>
+    <div class="form-example">
+      <label for="email">Enter your email: </label>
+      <input type="email" name="email" id="email" required />
+    </div>
+    <div class="form-example">
+      <input type="submit" value="Subscribe!" />
+    </div>
+    </fieldset>
+  </form>
+
+  <form method="post">
+    <fieldset>
+      <legend>Do you agree to the terms?</legend>
+      <label><input type="radio" name="radio" value="yes" /> Yes</label>
+      <label><input type="radio" name="radio" value="no" /> No</label>
+    </fieldset>
+  </form>
+
+  <form>
+    <fieldset>
+  <div class="formRow">
+    <h4>Colours</h4>
+    <input type="checkbox" name="colours" value="blue" id="blue"/><label for = "blue">Blue</label>
+    <input type="checkbox" name="colours" value="red" id="red"/><label for = "blue">Red</label>
+    <input type="checkbox" name="colours" value="yellow" id="yellow"/><label for = "blue">Yellow</label>
+    <input type="checkbox" name="colours" value="black" id="black"/><label for = "blue">Black</label>
+  </div>
+</fieldset>
+</form>
+</body>
+</html>

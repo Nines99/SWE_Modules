@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <!-- works like <a href="/index.html">Home</a> -->
+        <a href="/SW.E/Module 2/Labs/Lab1/index.html">Home</a>
+        <a href="/SW.E/Module 2/Labs/Lab1/form.html">Form</a>
+    </header>
+
+    <main>
+      <div>
+      <form method="POST" action="http://localhost:3000/profile">
+        <label for="Fname">First Name:</label>
+        <input type="text" id="Fame" name="Fname" required><br>
+
+        <label for="Lname">Last Name:</label>
+        <input type="text" id="Lname" name="Lname" required><br>
+
+        <label for="Lname">Country:</label>
+        <select name="country" id="country">
+          <option value="usa">USA</option>
+          <option value="canada">Canada</option>
+        </select><br>
+
+        <label for="Lname">Gender:</label>
+        <input type="radio" name="gender" value="male"> Male
+        <input type="radio" name="gender" value="female"> Female <br>
+
+        <label for="Lname">Hobby:</label>
+        <input type="checkbox" name="interests" value="music"> Music
+        <input type="checkbox" name="interests" value="sports"> Sports <br>
+      
+        <label for="message">Extra:</label><br>
+        <textarea id="message" name="message" rows="4" cols="50" required></textarea><br>
+
+
+        <input type="submit" value="Submit">
+      </form>
+      </div>
+    </main>
+
+    <footer>Copyright 2021 &copy;</footer>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <title>Calculator</title>
+</head>
+<body>
+
+<h1>Calculator</h1>
+<p>This is a calculator</p>
+<p><a href = "/">go backhome!</a></p>
+
+<label> First Number </label><input class = "first"> 
+<label> Second Number </label><input class = "second"> 
+
+<button onclick="calculate('+')"> + </button>
+<button onclick="calculate('-')"> - </button>
+<button onclick="calculate('x')"> x </button>
+<button onclick="calculate('/')"> / </button>
+
+<p class = "result">Awaiting Inputs...</p>
+
+<button onclick="resetCalculator()">Reset</button>
+
+<script>
+    function calculate(operator) {
+        const first = parseInt(document.getElementsByClassName("first")[0].value)
+        const second = parseInt(document.getElementsByClassName("second")[0].value)
+        let result; 
+        if (operator === "+"){
+            result = first + second
+        }
+        else if (operator === "-"){
+            result = first - second
+        }
+        else if (operator === "x"){
+            result = first * second
+        }
+        else if (operator === "/"){
+            result = first / second
+        }
+        console.log(result)
+        document.getElementsByClassName("result")[0].innerText=result
+    }
+
+    function resetCalculator() {
+            // Clear input fields and result display by setting all to 
+            //"nothing" and "Reset!" to say when it has completed its function
+            document.getElementsByClassName("first")[0].value = "";
+            document.getElementsByClassName("second")[0].value = "";
+            document.getElementsByClassName("result")[0].innerText = "Reset!";
+    }
+            
+</script>
+</body>
+</html> 

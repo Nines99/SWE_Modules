@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #e3f2fd;
+            font-size: 12;
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px;
+            width: 250px;
+            float: left;
+        }
+
+        .card-title {
+            font-weight: 600;
+            font-size: 3em;
+            padding: 0 0 10px 0;
+        }
+
+        .card-description {
+            font-weight: 400;
+            font-size: 2em
+        }
+
+        .card-image {
+        max-width: 100%; /* Set the maximum width of the image to 100% of its container */
+        height: auto; /* Maintain the aspect ratio of the image */
+    }   
+    </style>
+</head>
+
+<body>
+    <template id="card-template">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title"></div>
+                <div class="card-text"></div>
+            </div>
+        </div>
+    </template>
+
+    <div id="card-list"></div>
+
+    <script> // Mod 4 Ex 2 Part 1
+        function addCard(title, text) { // 1. add title, text for dynamic content
+            // clone the template
+            const template =
+                document.getElementById("card-template").content.cloneNode(true);
+
+            // populate the template
+            template.querySelector('.card-title').innerText = title;
+            template.querySelector('.card-text').innerText = text;
+            
+            // include the populated template into the page
+            document.querySelector('#card-list').appendChild(template);
+        }
+
+        addCard('Title1', 'Text1'); // add info here accordingly
+        addCard('Title2', 'Text2');
+    </script>
+
+<script> // Mod 4 Ex 2 Part 2
+    const data = [
+    { name: 'bob', age: 23 }, 
+    { name: 'alice', age: 39 }, 
+    { name: 'john', age: 15 } // added extra for testing purposes
+    ];
+
+    // C+P Original Code + new const data
+    function addCard(title, text) {
+        // clone the template
+        const template =
+            document.getElementById("card-template").content.cloneNode(true);
+
+        // populate the template with dynamic content
+        template.querySelector('.card-title').innerText = title;
+        template.querySelector('.card-text').innerText = text;
+
+        // include the populated template into the page
+        document.querySelector('#card-list').appendChild(template);
+    }
+
+    // Loop through the data array and create a card for each item
+    data.forEach(item => {
+        const title = `Name: ${item.name}`;
+        const text = `Age: ${item.age}`;
+        addCard(title, text);
+    });
+
+</script>
+
+<script> // part 3, using everything learn above + adjusted for images
+    const artist = {
+        name: "Van Gogh",
+        portfolio: [
+            { title: "portrait", url: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/436532/1671316/main-image" },
+            { title: "sky", url: "https://mymodernmet.com/wp/wp-content/uploads/2020/11/White-house-night-van-goh-worldwide-2.jpg" },
+        ]
+    };
+
+    function addCard(artistName, title, imageUrl) {
+            // clone the template
+            const template =
+                document.getElementById("card-template").content.cloneNode(true);
+
+            // populate the template with dynamic content
+            const cardTitleElement = template.querySelector('.card-title');
+            cardTitleElement.innerText = `${artistName} - ${title}`;
+            // had some help with above so I could get name + title to show together.
+            // not 100% sure how it all works.
+
+            const imageElement = document.createElement('img');
+            imageElement.src = imageUrl;
+            imageElement.alt = title;
+            imageElement.classList.add('card-image');
+
+            // include the populated template into the page
+            template.querySelector('.card-text').appendChild(imageElement);
+            document.querySelector('#card-list').appendChild(template);
+        }
+
+        // Loop through the artist's portfolio and create a card for each project
+        artist.portfolio.forEach(project => {
+            addCard(artist.name, project.title, project.url);
+        });
+</script>
+
+</body>
+</html>

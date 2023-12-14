@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta charset="UTF-8">
+    <meta name"viewport" content="width=device-width, initial-scale=1.0">
+    <title> HTML Practice Lab 1 </title>
+    <meta name="description" content="This is a description of my web page."
+    <meta name="keywords" content="HTML, CSS, JavaScript, meta tags">
+    <meta name="author" content="Henry">
+
+    <style>
+      table, th, td {
+        border: 1px solid black;
+      }
+    </style>
+  
+  </head>
+  
+  <body>
+    <header>
+      <nav>
+        <!-- works like <a href="/index.html">Home</a> -->
+        <a href="/SW.E/Module 2/Labs/Lab1/index.html">Home</a>
+        <a href="/SW.E/Module 2/Labs/Lab1/form.html">Form</a>
+      </nav>
+    </header>
+
+    <article>
+      <h1>Henry is learning HTML</h1>
+      <h2>Learning elements - div, span, p, pre, ul, li, ol, article</h2>
+      <div style="color: red;">Div Red</div>
+      <div style="color: blue;">Div Blue</div>
+      <div style="color: green;">Div Green</div>
+
+      <span style="color: magenta;">Span Magenta</span>
+      <span style="color: cyan;">Span Cyan</span>
+      <span style="color: yellow;">Span Yellow</span>
+
+      <p>p represents paragraph</p>
+
+      <pre>
+        Text in         a pre element
+        is displayed in a fixed-width
+        font, and it preserves
+        both      spaces and
+        line breaks
+      </pre>
+      
+      <ul>
+        <li>This is</li>
+        <li>An Unordered</li>
+        <li>List with ul and li</li>
+      </ul>
+      
+      <ol type="A">
+        <li>This is an</li>
+        <li>Ordered list</li>
+        <li>with ol and li + Type A</li>
+      </ol>
+   </article>
+
+   <article>
+    <table border="1">
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>City</th>
+      </tr>
+      <tr>
+        <td>John</td>
+        <td rowspan="2">rowspan<td>
+        <td>New York</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>30</td>
+        <td>Los Angeles</td>
+      </tr>
+      <tr>
+        <td>Henry</td>
+        <td colspan="2">colspan</td>
+        <td>Henry</td>
+        
+      </tr>
+    </table>
+  
+   </article>
+
+    <main>
+      <img src="https://picsum.photos/200/300" alt="" />
+
+      <video autoplay controls width="250">
+        <source src="/media/cc0-videos/flower.webm" type="video/webm">
+        <source src="/media/cc0-videos/flower.mp4" type="video/mp4">
+        Sorry, your browser doesn't support embedded videos.
+      </video>
+
+      <audio autoplay controls>
+      <source src="/media/cc0-audio/t-rex-roar.mp3">
+        Your browser does not support the
+        <code>audio</code> element.
+      </audio>
+   </main>
+    
+   <div id="element" style="margin: 20px; color: blue; font-size: 24px;"> Part VIII</div>
+   <script> const element = document.getElementById('element');
+
+    // Accessing and modifying inline styles
+    myDiv.style.backgroundColor = 'lightgray';
+    myDiv.style.padding = '10px';
+    </script>
+
+    <footer>Beep Boop 2023</footer>
+  
+  </body>
+</html>
