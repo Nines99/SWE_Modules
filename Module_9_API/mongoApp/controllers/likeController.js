@@ -2,11 +2,11 @@
 let Models = require("../models"); //matches index.js
 const mongoose = require("mongoose")
 
-const getUsers = (res) => {
+const getLikes = (res) => {
 
   //finds all users
 
-  Models.User.find({})
+  Models.Likes.find({})
     .then((data) => res.send({ result: 200, data: data }))
     .catch((err) => {
       console.log(err);
@@ -14,10 +14,10 @@ const getUsers = (res) => {
     });
 // res.send("Success from Controller!")
 };
-const createUser = (data, res) => {
+const createLike = (data, res) => {
   //creates a new user using JSON data POSTed in request body
   console.log(data);
-  new Models.User(data)
+  new Models.Likes(data)
     .save()
     .then((data) => res.send({ result: 200, data: data }))
     .catch((err) => {
@@ -26,6 +26,6 @@ const createUser = (data, res) => {
     });
 };
 module.exports = {
-  getUsers,
-  createUser,
+  getLikes,
+  createLike,
 };

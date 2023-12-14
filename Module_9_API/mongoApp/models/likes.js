@@ -1,13 +1,13 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const userSchema = new Schema({
+const likeSchema = new Schema({
 
   Likes: { type: Number, required: true },
   UserID: { type: Number, required: true },
   CommentID: { type: Number, required: true },
 
 });
-module.exports = mongoose.model("user", userSchema);
+module.exports = mongoose.model("like", likeSchema);
 
 //The "user" mentioned in the above line should be in lowercase
 //singular form ..whereas the actual collection name in

@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const userSchema = new Schema({
+const postSchema = new Schema({
 
   Title: { type: String, trim: true, required: true },
   Description: { type: String, trim: true, required: true },
@@ -12,7 +12,7 @@ const userSchema = new Schema({
   CommentID: { type: Number, required: true },
 
 });
-module.exports = mongoose.model("user", userSchema);
+module.exports = mongoose.model("post", postSchema);
 
 //The "user" mentioned in the above line should be in lowercase
 //singular form ..whereas the actual collection name in
