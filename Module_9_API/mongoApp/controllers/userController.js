@@ -14,6 +14,7 @@ const getUsers = (res) => {
     });
 // res.send("Success from Controller!")
 };
+
 const createUser = (data, res) => {
   //creates a new user using JSON data POSTed in request body
   console.log(data);
@@ -28,6 +29,7 @@ const createUser = (data, res) => {
       res.send({ result: 500, error: err.message });
     });
 };
+
 module.exports = {
   getUsers,
   createUser,

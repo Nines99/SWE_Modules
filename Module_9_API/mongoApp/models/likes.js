@@ -3,8 +3,8 @@ const Schema = mongoose.Schema;
 const likeSchema = new Schema({
 
   Likes: { type: Number, required: true },
-  UserID: { type: Number, required: true },
-  CommentID: { type: Number, required: true },
+  UserID: { type: String, required: true },
+  CommentID: { type: String, required: true },
 
 });
 module.exports = mongoose.model("like", likeSchema);

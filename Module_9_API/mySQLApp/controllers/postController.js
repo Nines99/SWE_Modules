@@ -1,6 +1,6 @@
 "use strict";
 let Models = require("../models"); //matches index.js
-const mongoose = require("mongoose")
+
 
 const getPosts = (res) => {
 

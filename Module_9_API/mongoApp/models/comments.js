@@ -5,8 +5,8 @@ const commentSchema = new Schema({
   Content: { type: String, required: true },
   DateofCreation: { type: String, default: Date.now },
 
-  UserID: { type: Number, required: true },
-  LikesID: { type: Number, required: true },
+  UserID: { type: String, required: true },
+  PostID: { type: String, required: true },
 
 });
 module.exports = mongoose.model("comment", commentSchema);

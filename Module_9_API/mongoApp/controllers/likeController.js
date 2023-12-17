@@ -14,6 +14,7 @@ const getLikes = (res) => {
     });
 // res.send("Success from Controller!")
 };
+
 const createLike = (data, res) => {
   //creates a new user using JSON data POSTed in request body
   console.log(data);
@@ -25,6 +26,7 @@ const createLike = (data, res) => {
       res.send({ result: 500, error: err.message });
     });
 };
+
 module.exports = {
   getLikes,
   createLike,

@@ -1,7 +1,5 @@
 "use strict";
 let Models = require("../models"); //matches index.js
-const mongoose = require("mongoose")
-
 const getComments = (res) => {
 
   //finds all users
@@ -18,7 +16,7 @@ const getComments = (res) => {
 const createComment = (data, res) => {
   //creates a new user using JSON data POSTed in request body
   console.log(data);
-  new Models.Comment(data)
+  Models.Comment.create(data)  // Change this Weekend!!
     .save()
     .then((data) => res.send({ result: 200, data: data }))
     .catch((err) => {

@@ -1,12 +1,12 @@
 "use strict";
 let Models = require("../models"); //matches index.js
-const mongoose = require("mongoose")
 
-const getComments = (res) => {
+
+const getUsers = (res) => {
 
   //finds all users
 
-  Models.Comment.find({})
+  Models.User.findAll({})
     .then((data) => res.send({ result: 200, data: data }))
     .catch((err) => {
       console.log(err);
@@ -15,10 +15,13 @@ const getComments = (res) => {
 // res.send("Success from Controller!")
 };
 
-const createComment = (data, res) => {
+const createUser = (data, res) => {
   //creates a new user using JSON data POSTed in request body
   console.log(data);
-  new Models.Comment(data)
+//   let updatedData = {...data, DateofBirth: new Date(data.DateofBirth)}
+//   console.log(updatedData)
+
+  new Models.User(data)
     .save()
     .then((data) => res.send({ result: 200, data: data }))
     .catch((err) => {
@@ -27,19 +30,7 @@ const createComment = (data, res) => {
     });
 };
 
-const updateComment = (req, res) => {
-  Models.Comment.findByIdAndUpdate(req.params.id,req.body, {
-      useFindAndModify: false, 
-
-  }).then(function (data) {
-      res.send({ result: 200, data: data })
-  }).catch(err => {
-      throw err
-  })
-}
-
 module.exports = {
-  getComments,
-  createComment,
-  updateComment,
+  getUsers,
+  createUser,
 };
